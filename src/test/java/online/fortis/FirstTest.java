@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class firstTest {
+public class FirstTest {
 
     @BeforeAll
     static void beforeAll() {
@@ -21,7 +21,7 @@ public class firstTest {
     @Test
     void fillPracticeFormTests() {
         open("https://demoqa.com/automation-practice-form");
-        //заполнение полей
+        //fill form
         $("#firstName").setValue("FirstName");
         $("#lastName").setValue("LastName");
         $("#userEmail").setValue("test@test.ru");
@@ -47,7 +47,7 @@ public class firstTest {
 
         $("#submit").click();
 
-        // Проверка результата
+        // check result
         $("#example-modal-sizes-title-lg").shouldBe(visible);
         $(".table-responsive").shouldHave(text("FirstName"));
         $(".table-responsive").shouldHave(text("LastName"));
