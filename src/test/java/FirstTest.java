@@ -1,5 +1,3 @@
-package online.fortis;
-
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -38,8 +36,7 @@ public class FirstTest {
         $("[for=hobbies-checkbox-1]").click();
         $("[for=hobbies-checkbox-3]").click();
 
-        File file = new File("src/test/Glazov.txt");
-        $("input[id='uploadPicture']").uploadFile(file);
+        $("#uploadPicture").uploadFromClasspath("Glazov.txt");
 
         $("#currentAddress").setValue("Any Address");
         $("#react-select-3-input").setValue("Haryana").pressEnter();
@@ -49,17 +46,8 @@ public class FirstTest {
 
         // check result
         $("#example-modal-sizes-title-lg").shouldBe(visible);
-        $(".table-responsive").shouldHave(text("FirstName"));
-        $(".table-responsive").shouldHave(text("LastName"));
-        $(".table-responsive").shouldHave(text("test@test.ru"));
-        $(".table-responsive").shouldHave(text("Other"));
-        $(".table-responsive").shouldHave(text("9991234567"));
-        $(".table-responsive").shouldHave(text("12 August,1986"));
-        $(".table-responsive").shouldHave(text("English, Computer Science"));
-        $(".table-responsive").shouldHave(text("Sports, Music"));
-        $(".table-responsive").shouldHave(text("Glazov.txt"));
-        $(".table-responsive").shouldHave(text("Any Address"));
-        $(".table-responsive").shouldHave(text("Haryana Karnal"));
-
+        $(".table-responsive").shouldHave(text("LastName"), text("test@test.ru"), text("Other"),
+                text("9991234567"), text("12 August,1986"), text("English, Computer Science"), text("Sports, Music"),
+                text("Glazov.txt"), text("Any Address"), text("Haryana Karnal"));
     }
 }
