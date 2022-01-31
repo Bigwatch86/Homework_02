@@ -6,6 +6,15 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     testImplementation (
             "com.codeborne:selenide:5.25.0",
