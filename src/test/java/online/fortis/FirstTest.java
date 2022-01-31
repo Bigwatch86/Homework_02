@@ -22,7 +22,7 @@ public class FirstTest {
     void fillPracticeFormTests() {
         open("https://demoqa.com/automation-practice-form");
         //fill form
-        $("#firstName").setValue("FirstName");
+        $("#firstName").setValue("Igor");
         $("#lastName").setValue("LastName");
         $("#userEmail").setValue("test@test.ru");
         $("[for='gender-radio-3']").click();
@@ -48,9 +48,8 @@ public class FirstTest {
 
         // check result
         $("#example-modal-sizes-title-lg").shouldBe(visible);
-        $(".table-responsive").shouldHave(text("FirstName"), text("LastName"), text("test@test.ru"),
+        $(".table-responsive").shouldHave(text("Igor"), text("LastName"), text("test@test.ru"),
                 text("Other"), text("9991234567"), text("12 August,1986"), text("English, Computer Science"),
                 text("Sports, Music"), text("Glazov.txt"), text("Any Address"), text("Haryana Karnal"));
     }
-    //comment 1
 }
